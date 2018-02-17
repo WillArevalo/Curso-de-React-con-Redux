@@ -3,7 +3,7 @@
 ## Tres principios de Redux:
 
 - Única fuente de la verdad.
-    El estado de toda tu aplicación esta almacenado en un árbol guardado en un único store lo que hace mas fácil el proceso de depuración.
+    El estado de toda tu aplicación esta almacenado en un árbol guardado en un único store lo  que hace mas fácil el proceso de depuración.
 - El estado es de solo lectura.
     La única forma de modificar el estado es emitiendo una acción, un objeto que describe que ocurrió.
 - Los cambios se realizan con funciones puras. Una función que sea fácil de leer.
