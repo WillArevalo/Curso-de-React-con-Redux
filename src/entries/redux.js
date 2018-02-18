@@ -7,6 +7,13 @@ function handleSubmit(event) {
 	const data = new FormData($form);
 	const title = data.get('title');
 	console.log(title);
+	// Para agregar data
+	store.dispatch({
+	    type: 'ADD_SONG',
+	    payload: {
+	    	title,
+	    }
+	})
 }
 
 // el $ es a manera de convencion para referirme a un elemento en el dom
