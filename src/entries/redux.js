@@ -32,9 +32,20 @@ const initialState = [
 		"title": "Echame la culpa",
 	},
 ]
+
+// Generando el cambio del reducer con una funcion
+const reducer = (state , action) => {
+	switch (action.type){
+		case 'ADD_SONG':
+			return [...state, action.payload]
+		default: 
+			return state
+	}
+}
+
 // Inicializo el store de redux
 const store = createStore(
-	(state) => state,
+	reducer,
 	initialState,
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
