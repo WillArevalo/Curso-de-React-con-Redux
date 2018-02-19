@@ -50,14 +50,25 @@ const store = createStore(
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-// imprimimos el estado de nuestro store para obtener las canciones
-// Se puede obtener el estado del store con getState
-const $container = document.getElementById('playlist');
-const playlist = store.getState();
-playlist.map((item) => {
-	const template = document.createElement('p');
-	template.textContent = item.title;
-	$container.appendChild(template);
-})
+//Nos sucribimos a un evento para que se actualice una UI
+
+function render(){
+	// imprimimos el estado de nuestro store para obtener las canciones
+	// Se puede obtener el estado del store con getState
+	const $container = document.getElementById('playlist');
+	const playlist = store.getState();
+	$container.innerHTML = '';
+	playlist.map((item) => {
+		const template = document.createElement('p');
+		template.textContent = item.title;
+		$container.appendChild(template);
+	})
+}
+render();
+
+function handleChange(){
+	render();
+}
+store.subscribe(handleChange)
 
 console.log(store.getState())
