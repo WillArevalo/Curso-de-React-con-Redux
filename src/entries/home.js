@@ -8,11 +8,31 @@ import Home from '../pages/containers/home.js';
 //importo playlist que contiene media
 import data from '../api.json';
 //importo la bd provisoria
+import { Provider } from 'react-redux';
 
-//Referencio el elemento en donde estara vivo react
-const homeContainer = document.getElementById('home-container');
+import { createStore } from 'redux';
 
-//ReactDom.render(que voy a renderizar(elemento, o componente), o solo render() depende de como lo hallamos declarado donde lo haré(en que parte del dom));
-//Le enviamos propiedades al componente
-render(<Home data={data} />, homeContainer);
-//En este punto ejecuto en cli el comando npm run build:prod
+const initialState = {
+  data: {
+    ...data
+  }
+}
+
+const store = createStore(
+  (state) => state,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+console.log(store.getState());
+
+const homeContainer = document.getElementById('home-container')
+
+// ReactDOM.render(que voy a renderizar, donde lo haré);
+// const holaMundo = <h1>hola Estudiante!</h1>;
+// Provider es un componente de orden superior
+render(
+  <Provider store={store}>
+    <p>hola mundo</p>
+  </Provider>
+, homeContainer);
