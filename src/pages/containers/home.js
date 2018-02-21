@@ -6,6 +6,8 @@ import ModalContainer from '../../widgets/containers/modal.js';
 import Modal from '../../widgets/components/modal.js';
 import HandleError from '../../error/containers/handle-error.js';
 import VideoPlayer from '../../player/containers/video-player.js';
+// Importamos conect para que react funcione con redux en el container
+import { connect } from 'react-redux';
 
 class Home extends Component {
 	state = {
@@ -41,7 +43,7 @@ class Home extends Component {
 				<HomeLayout> 
 					<Related />
 					<Categories 
-						categories={this.props.data.categories} 
+						categories={this.props.categories} 
 						handleOpenModal = { this.handleOpenModal }
 					/>
 					{
@@ -61,5 +63,10 @@ class Home extends Component {
 		)//Haciendo condicionales(ternarios) si es true con la && seguria al siguiente comando
 	}
 }
-
-export default Home;
+function mapStateProps(state, props){
+	return {
+		categories: state.data.categories
+	}
+}
+//Atraves de connect y mandando mapStateProps que es todo lo que se guardara del store
+export default connect(mapStateProps)(Home);

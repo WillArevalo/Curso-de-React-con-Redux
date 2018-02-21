@@ -33,6 +33,6 @@ const homeContainer = document.getElementById('home-container')
 // Provider es un componente de orden superior
 render(
   <Provider store={store}>
-    <p>hola mundo</p>
+    <Home/>
   </Provider>
 , homeContainer);
