@@ -45,6 +45,7 @@ class Home extends Component {
 					<Categories 
 						categories={this.props.categories} 
 						handleOpenModal = { this.handleOpenModal }
+						search={this.props.search}
 					/>
 					{
 						this.state.modalVisible &&
@@ -65,7 +66,8 @@ class Home extends Component {
 }
 function mapStateProps(state, props){
 	return {
-		categories: state.data.categories
+		categories: state.data.categories,
+		search: state.search,
 	}
 }
 //Atraves de connect y mandando mapStateProps que es todo lo que se guardara del store
