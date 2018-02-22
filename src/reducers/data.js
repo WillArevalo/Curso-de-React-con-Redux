@@ -1,6 +1,7 @@
+//Reducer y acciones
 const data = (state, action) => {
 	switch (action.type) {
-		case 'asd': {
+		case 'SEARCH_VIDEO': {
 			return state
 		}
 		default:{
