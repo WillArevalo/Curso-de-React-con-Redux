@@ -8,9 +8,12 @@ import Home from '../pages/containers/home.js';
 //importo playlist que contiene media
 import data from '../api.json';
 //importo la bd provisoria
+//importamos el provider que nos ayuda a conectar redux con react
 import { Provider } from 'react-redux';
-
+//Importamos createstore para crear el store con redux
 import { createStore } from 'redux';
+//Importamos un reducer para que se encargue de gestionar los datos
+import reducer from '../reducers/data';
 
 const initialState = {
   data: {
