@@ -17,12 +17,13 @@ import reducer from '../reducers/data';
 
 const initialState = {
   data: {
-    ...data
+    ...data,
+    search: [],
   }
 }
 
 const store = createStore(
-  (state) => state,
+  reducer,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
