@@ -6,10 +6,10 @@ import { render } from 'react-dom';
 import Home from '../pages/containers/home.js';
 // import Contenido from './src/playlist/components/content.js';
 //importo playlist que contiene media
-import data from '../api.json';
+// import data from '../api.json';
 //importo la bd provisoria
 //importo el schema normalizado
-import normalizedData from '../schemas/index';
+import data from '../schemas/index';
 
 //importamos el provider que nos ayuda a conectar redux con react
 import { Provider } from 'react-redux';
@@ -19,11 +19,13 @@ import { createStore } from 'redux';
 import reducer from '../reducers/data';
 
 //debugeando la normalizada
-console.log(normalizedData);
+console.log(data);
 
 const initialState = {
   data: {
-    ...data,
+    // ...data,
+    entities: data.entities,
+    categories: data.result.categories,
   },
   search: [],
 }
@@ -34,7 +36,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-console.log(store.getState());
+// console.log(store.getState());
 
 const homeContainer = document.getElementById('home-container')
 

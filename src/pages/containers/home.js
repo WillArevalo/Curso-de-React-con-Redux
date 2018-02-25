@@ -64,9 +64,13 @@ class Home extends Component {
 		)//Haciendo condicionales(ternarios) si es true con la && seguria al siguiente comando
 	}
 }
+// Obteniendo categorias
 function mapStateProps(state, props){
+	const categories = state.data.categories.map((categoryId) => {
+		return state.data.entities.categories[categoryId]
+	})
 	return {
-		categories: state.data.categories,
+		categories,
 		search: state.search,
 	}
 }

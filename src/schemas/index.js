@@ -21,6 +21,8 @@ const category = new schema.Entity('categories', {
 	//forma un array apartir de los medias
 	playlist: new schema.Array(media)
 })
+// Lo que hacemos es sacar los medias del anidamiento y hacemos una relacion con las categorias
+// Result:
 // categorias
 const categories = { categories: new schema.Array(category)}
 
