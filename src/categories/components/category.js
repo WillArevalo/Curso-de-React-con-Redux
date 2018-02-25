@@ -12,7 +12,7 @@ function Category (props) {
 				{props.title}
 			</h2>
 			<Playlist 
-				handleOpenModal = {props.handleOpenModal}
+				handleOpenModal={props.handleOpenModal}
 				playlist={props.playlist}
 			/>
 		</div>

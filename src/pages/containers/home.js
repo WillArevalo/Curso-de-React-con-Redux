@@ -44,7 +44,7 @@ class Home extends Component {
 					<Related />
 					<Categories 
 						categories={this.props.categories} 
-						handleOpenModal = { this.handleOpenModal }
+						handleOpenModal={this.handleOpenModal}
 						search={this.props.search}
 					/>
 					{

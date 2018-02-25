@@ -1,5 +1,5 @@
 import React from 'react';
-import Media from './media.js';
+import MediaContainer from '../containers/media';
 import './playlist.css';
 
 //Cuando el componente no guarda datos o algo similar se puede transformar 
@@ -9,11 +9,11 @@ function Playlist(props) {
 	return (
 		<div className = "Playlist">
 			{
-				props.playlist.map((item) =>{
+				props.playlist.map((mediaId) =>{
 					return (
-						<Media 
-							{...item} 
-							key={item.id} 
+						<MediaContainer 
+							id={mediaId}
+							key={mediaId} 
 							openModal={props.handleOpenModal}
 						/>
 					)
