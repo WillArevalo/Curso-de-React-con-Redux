@@ -1,5 +1,12 @@
+import schema from '../schemas/index';
+const initialState = {
+	entities: schema.entities,
+	categories: schema.result.categories,
+	search: [],
+}
+
 //Reducer y acciones
-function data (state, action) {
+function data (state = initialState, action) {
 	switch (action.type) {
 		case 'SEARCH_VIDEO': {
 			let results = []

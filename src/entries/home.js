@@ -9,30 +9,38 @@ import Home from '../pages/containers/home.js';
 // import data from '../api.json';
 //importo la bd provisoria
 //importo el schema normalizado
-import data from '../schemas/index';
+// import data from '../schemas/index';
 
 //importamos el provider que nos ayuda a conectar redux con react
 import { Provider } from 'react-redux';
 //Importamos createstore para crear el store con redux
 import { createStore } from 'redux';
 //Importamos un reducer para que se encargue de gestionar los datos
-import reducer from '../reducers/data';
+// importamos el reducer que combina todos los otros
+import reducer from '../reducers/index';
 
 //debugeando la normalizada
-console.log(data);
+// console.log(data);
 
-const initialState = {
-  data: {
-    // ...data,
-    entities: data.entities,
-    categories: data.result.categories,
-  },
-  search: [],
-}
+// const initialState = {
+//   // Cada key que encontremos en nuestro estado inicial debe ser un reducer y combinarlos
+//   // Reducer 1(Data)
+//   data: {
+//     // ...data,
+//     entities: data.entities,
+//     categories: data.result.categories,
+//     search: [],
+//   },
+//   // Reducer 2(Modal)
+//   modal: {
+//     visibility: false,
+//     mediaId: null,
+//   },
+// }
 
 const store = createStore(
   reducer,
-  initialState,
+  {},
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

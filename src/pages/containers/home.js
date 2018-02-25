@@ -71,7 +71,7 @@ function mapStateProps(state, props){
 	})
 	return {
 		categories,
-		search: state.search,
+		search: state.data.search,
 	}
 }
 //Atraves de connect y mandando mapStateProps que es todo lo que se guardara del store
