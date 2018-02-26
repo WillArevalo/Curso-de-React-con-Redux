@@ -10,12 +10,9 @@ function Categories(props){
 		<div className="Categories">
 			<Search />
 			{
-				props.search.length > 0 && <Category
-									          key='search'
-									          title='Resultados'
-									          description='Tu busqueda...'
-									          playlist={props.search}
-									        />
+				props.search.map((item) => {
+					return <Media {...item.toJS()} key={item.get('id')} />
+				})
 			}
 			{
 				props.categories.map((item) => {
