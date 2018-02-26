@@ -21,8 +21,8 @@ function Categories(props){
 				props.categories.map((item) => {
 					return (
 						<Category 
-							key={item.id} 
-							{...item} 
+							key={item.get('id')} 
+							{...item.toJS()} 
 							handleOpenModal = {props.handleOpenModal}
 						/>
 					)

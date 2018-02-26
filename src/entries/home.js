@@ -18,6 +18,8 @@ import { createStore } from 'redux';
 //Importamos un reducer para que se encargue de gestionar los datos
 // importamos el reducer que combina todos los otros
 import reducer from '../reducers/index';
+// mapas de inmutable
+import { Map as map } from 'immutable';
 
 //debugeando la normalizada
 // console.log(data);
@@ -40,7 +42,8 @@ import reducer from '../reducers/index';
 
 const store = createStore(
   reducer,
-  {},
+  //tambien se debe volver inmutable el estado inicial asi este vacio
+  map({}),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

@@ -66,12 +66,13 @@ class Home extends Component {
 }
 // Obteniendo categorias
 function mapStateProps(state, props){
-	const categories = state.data.categories.map((categoryId) => {
-		return state.data.entities.categories[categoryId]
+	//get es un metodo de immutableJS
+	const categories = state.get('data').get('categories').map((categoryId) => {
+		return state.get('data').get('entities').get('categories').get(categoryId)
 	})
 	return {
 		categories,
-		search: state.data.search,
+		search: state.get('data').get('search'),
 	}
 }
 //Atraves de connect y mandando mapStateProps que es todo lo que se guardara del store
